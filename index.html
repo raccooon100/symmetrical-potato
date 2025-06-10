@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #FFEEDD;
+    font-family: 'Arial';
+    text-align: center;
+  }
+
+  h1 {
+    color: #FF8000;
+    font-family: '华文琥珀', serif;
+    font-size: 50px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  a {
+    margin: 10px;
+    text-decoration: none;
+    color: #BB5E00;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+
+  .image-grid img {
+    width: 250px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+    border-radius: 12px;
+  }
+
+  .image-grid img.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ✅ 加這段來設定作品標題樣式 */
+  .works-title {
+    color: #FFAF60;
+    font-size: 16px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+  <h1>PORTFOLIO</h1>
+  <p>我是浣熊，這裡有一些我的作品</p>
+
+  <!-- 導覽列 -->
+  <div>
+    <a href="#about">關於我</a> |
+    <a href="#works">作品</a> |
+    <a href="#contact">聯絡我</a>
+  </div>
+
+  <!-- 區塊內容 -->
+  <h2 id="about">關於我</h2>
+  <p>實踐大學三年級在校生</p>
+  <p>喜歡畫一些可愛的插畫｜偶爾做一些3D建模</p>
+  <p>軟體應用：Adobe系列軟體｜Maya｜Blender</p>
+
+  <h2 id="works">作品</h2>
+<p class="works-title">CHILDHOOD</p>
+<div class="image-grid">
+      <img src="A.png" alt="作品1">
+      <img src="D.jpg" alt="作品2">
+      <img src="C.png" alt="作品3">
+</div>
+
+<p class="works-title">浣熊月曆</p>
+<div class="image-grid">
+      <img src="1.png" alt="作品1">
+      <img src="2.png" alt="作品2">
+      <img src="4.png" alt="作品3">
+      <img src="5.png" alt="作品4">
+      <img src="8.png" alt="作品5">
+      <img src="9.png" alt="作品6">
+      <img src="10.png" alt="作品7">
+</div>
+
+<p class="works-title">Fish</p>
+<div class="image-grid">
+      <img src="11.png" alt="作品1">
+      <img src="12.png" alt="作品2">
+      <img src="13.png" alt="作品3">
+      <img src="14.png" alt="作品4">
+      <img src="15.png" alt="作品5">
+      <img src="16.png" alt="作品6">
+</div>
+
+
+  <h2 id="contact">聯絡我</h2>
+  <p>Email: a111141013@gm2.usc.edu.tw｜IG: raccoooon_1413</p>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const images = document.querySelectorAll('.image-grid img');
+    images.forEach(img => {
+      const rect = img.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        img.classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
